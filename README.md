@@ -31,7 +31,7 @@ The Product Model Toolkit helps you to manage third-party open source dependenci
 
 4. The PHP scanner performs a deep analysis of a web project and sends its result as a standardized representation (like the CLI client) to the server.
 
-## Project Structure
+## Project Structure (TODO)
 
 ```
 ├── cmd/.................Main applications of this project which will be compiled as executables
@@ -52,6 +52,28 @@ The Product Model Toolkit helps you to manage third-party open source dependenci
 
 All important commands needed to build, test, and run the applications are represented as Makefile rule.
 All available rules can be displayed with `make help`.
+
+### Source code structure
+#### Main folders
+- The main functionality lives under these three folders: cmd, internal, and pkg.
+
+  
+- The cmd directory contains two subfolders (client, server) with a single main.go each. As this project creates two executable binaries, we know exactly that this folder will be the place to look.
+
+  
+- Second one is the internal folder which contains the project packages. These packages are specific to the project and can't be imported outside of the project.
+  
+
+- Next is the pkg folder contains packages which would be accessible to other projects and not just internal modules.
+
+#### Other folders
+- The test folder doesn't contain any go test;
+  It's for another test scripts such as Selenium, 
+  Python or even bash tests to evaluate the project. 
+
+
+- The ui folder contains templates, and other front-end files 
+  which served as a reporting ui or admin page.
 
 ### Build
 
